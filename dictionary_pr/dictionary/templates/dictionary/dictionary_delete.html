@@ -1,0 +1,11 @@
+{% extends 'root.html' %}
+
+{% block content %}
+    <div style="margin: 2%;">
+        <h3>Удаление слова</h3><br>
+        <form method="post" style="width: 50%;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary" style="font-size: 22px;">Удалить</button>
+        </form>
+    </div>
+{% endblock %}

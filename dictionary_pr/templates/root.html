@@ -1,0 +1,29 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="https://kit.fontawesome.com/f62ec13992.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header >
+        <div class="d-flex align-items-center" style="background: #66B2FF; width: 100%; height: 110px; padding: 2%;">
+                <form method="get" action="{% url 'dictionary:search' %}">
+                    {% csrf_token %}
+                    <input class="btn btn-light" type="search" name="q" placeholder="&#128269; Поиск" style="width: 400px; text-align: left;">
+                    <button class="btn btn-primary" type="submit">Найти</button>
+                </form>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>

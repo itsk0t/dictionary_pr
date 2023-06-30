@@ -1,0 +1,14 @@
+{% extends 'root.html' %}
+
+{% block content %}
+    <div style="margin: 2%;">
+        <h3>Добавление слова</h3><br>
+        <form method="post" style="width: 50%;">
+            {% csrf_token %}
+            {{ form.name }}<br>
+            {{ form.text }}<br>
+            {{ form.photo }}<br>
+            <button type="submit" class="btn btn-primary" style="font-size: 22px;">Добавить</button>
+        </form>
+    </div>
+{% endblock %}

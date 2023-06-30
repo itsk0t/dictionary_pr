@@ -1,0 +1,15 @@
+{% extends 'root.html' %}
+
+{% block content %}
+    <div>
+        <div class="card" style="width: 70%; margin: 2%;">
+            <h5 class="card-header"><a style="text-decoration: none;" href="{% url 'dictionary:dict' %}"><i class="fa-solid fa-arrow-left"></i> Назад</a></h5>
+            <div class="card-body">
+                <p class="card-text" style="font-size: 20px;"><span style="font-weight: bold;">{{ dict_detail.name }}</span> - {{ dict_detail.text }}</p>
+                <img style="width: 60%;" src="{{ dict_detail.photo.url }}"> <br><br>
+                <a href="{% url 'dictionary:dict_update' dict_detail.id %}" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i> Редактировать</a>
+                <a href="{% url 'dictionary:dict_delete' dict_detail.id %}" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i> Удалить</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
