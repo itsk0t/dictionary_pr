@@ -3,7 +3,7 @@
 {% block content %}
     <div style="margin: 2%;">
         <h3>Добавление слова</h3><br>
-        <form method="post" style="width: 50%;">
+        <form method="post" enctype="multipart/form-data" style="width: 50%;">
             {% csrf_token %}
             {{ form.name }}<br>
             {{ form.text }}<br>

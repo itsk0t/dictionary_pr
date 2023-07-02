@@ -35,7 +35,7 @@ class Search(ListView):
 
 def create(request):
     if request.method == 'POST':
-        form = DictForm(request.POST)
+        form = DictForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('dictionary:dict')
